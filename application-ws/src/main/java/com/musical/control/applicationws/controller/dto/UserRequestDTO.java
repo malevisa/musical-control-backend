@@ -1,44 +1,20 @@
-package com.musical.control.applicationws.entitys;
+package com.musical.control.applicationws.controller.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Entity
-public class User {
+public class UserRequestDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUser;
-
-    @NotBlank
-    @Size(min = 8, max = 50)
     private String username;
 
-    @NotBlank
-    @Size(min = 8, max = 50)
     private String email;
 
-    @NotBlank
-    @Size(min = 8, max = 50)
     private String password;
 
-    public User(String username, String email, String password) {
+    public UserRequestDTO(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
-    }
-
-    public Long getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(Long idUser) {
-        this.idUser = idUser;
     }
 
     public String getUsername() {
