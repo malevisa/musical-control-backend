@@ -5,13 +5,25 @@ import javax.validation.constraints.Size;
 
 public class UserRequestDTO {
 
+    private Long idUser;
+
     private String username;
 
     private String email;
 
     private String password;
 
+    public UserRequestDTO() {
+    }
+
     public UserRequestDTO(String username, String email, String password) {
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    public UserRequestDTO(Long idUser, String username, String email, String password) {
+        this.idUser = idUser;
         this.username = username;
         this.email = email;
         this.password = password;
@@ -39,5 +51,13 @@ public class UserRequestDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Long getIdUser() {
+        return idUser;
+    }
+
+    public void setIdUser(Long idUser) {
+        this.idUser = idUser;
     }
 }
